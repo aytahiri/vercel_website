@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindShift Movement — Reprogram Your Mind, Manifest Your Life</title>
+<meta name="description" content="A four-book collection and guided practice for rewiring how you think, act, and attract the life you actually want.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #100F0D;
+    --bg-raise: #19170F;
+    --bg-raise-2: #211E15;
+    --gold: #D9A441;
+    --gold-deep: #B98430;
+    --cream: #F5F1E8;
+    --muted: #A79D8B;
+    --muted-2: #7B7264;
+    --band: #EAE0C8;
+    --band-ink: #100F0D;
+    --line: rgba(245,241,232,0.09);
+    --radius: 2px;
+    --maxw: 1200px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;} }
+  body{
+    background:var(--bg);
+    color:var(--cream);
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  @media (max-width:640px){ .wrap{padding:0 20px;} }
+
+  h1,h2,h3{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-0.01em;}
+
+  .kicker{
+    display:flex; align-items:center; gap:10px;
+    font-size:12px; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--gold); font-weight:600; margin-bottom:14px;
+  }
+  .kicker::before{
+    content:''; width:6px; height:6px; border-radius:50%;
+    background:var(--gold); box-shadow:0 0 0 3px rgba(217,164,65,0.18);
+    flex-shrink:0;
+  }
+  .kicker.center{ justify-content:center; }
+  .rule{
+    width:44px; height:1px; background:var(--gold); opacity:0.5; margin:18px 0 0;
+  }
+  .rule.center{ margin-left:auto; margin-right:auto; }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:15px 28px; font-size:14px; font-weight:600; letter-spacing:0.01em;
+    border-radius:var(--radius); border:1px solid transparent; white-space:nowrap;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+  }
+  .btn-solid{ background:var(--gold); color:#171308; }
+  .btn-solid:hover{ background:var(--cream); transform:translateY(-2px); box-shadow:0 10px 24px rgba(217,164,65,0.22); }
+  .btn-outline{ border-color:rgba(245,241,232,0.35); color:var(--cream); }
+  .btn-outline:hover{ border-color:var(--cream); background:rgba(245,241,232,0.06); transform:translateY(-2px); }
+  .btn-dark{ background:#171308; color:var(--gold); border-color:rgba(217,164,65,0.4); }
+  .btn-dark:hover{ background:var(--gold); color:#171308; }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(16,15,13,0.86); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
+  .logo{ font-family:'Fraunces',serif; line-height:1.05; }
+  .logo .top{ font-size:19px; letter-spacing:0.04em; font-weight:600; }
+  .logo .sub{ font-size:10px; letter-spacing:0.28em; color:var(--muted); text-transform:uppercase; }
+  .nav-links{ display:flex; align-items:center; gap:36px; }
+  .nav-links a{ font-size:14px; color:var(--muted); transition:color .2s; position:relative; }
+  .nav-links a:hover{ color:var(--cream); }
+  .nav-right{ display:flex; align-items:center; gap:20px; }
+  .cart{ position:relative; opacity:.85; }
+  .cart .badge{
+    position:absolute; top:-7px; right:-9px; background:var(--gold); color:#171308;
+    font-size:10px; font-weight:700; width:16px; height:16px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .menu-toggle{ display:none; background:none; border:none; color:var(--cream); }
+  @media (max-width:900px){
+    .nav-links{ display:none; }
+    .menu-toggle{ display:flex; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{ position:relative; padding:88px 0 60px; overflow:hidden; }
+  .hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; align-items:center; gap:40px; position:relative; }
+  @media (max-width:980px){ .hero-grid{ grid-template-columns:1fr; } }
+  .hero-copy h1{ font-size:clamp(38px,5.4vw,62px); line-height:1.05; margin-bottom:22px; }
+  .hero-copy h1 .accent{ color:var(--gold); font-style:italic; }
+  .hero-copy p{ color:var(--muted); font-size:17px; max-width:440px; margin-bottom:34px; }
+  .hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:52px; }
+  .stats{ display:flex; gap:38px; flex-wrap:wrap; }
+  .stat b{ display:block; font-family:'Fraunces',serif; font-size:22px; font-weight:600; }
+  .stat span{ font-size:12px; color:var(--muted-2); text-transform:uppercase; letter-spacing:0.08em; }
+
+  .hero-visual{ position:relative; display:flex; justify-content:center; align-items:center; min-height:420px; }
+  .orbit-svg{ position:absolute; inset:0; width:100%; height:100%; opacity:0.55; }
+  .figure-scene{ position:relative; width:100%; max-width:420px; }
+  .book-float{
+    position:relative; z-index:2; width:64%; margin-left:auto;
+    filter:drop-shadow(0 30px 50px rgba(0,0,0,0.55));
+    animation:floatY 7s ease-in-out infinite;
+  }
+  @keyframes floatY{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);} }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{ padding:110px 0; }
+  @media (max-width:640px){ section{ padding:72px 0; } }
+  .section-head{ text-align:center; max-width:560px; margin:0 auto 56px; }
+  .section-head h2{ font-size:clamp(28px,4vw,40px); }
+
+  /* ---------- CAROUSEL (books) ---------- */
+  .carousel-wrap{ position:relative; }
+  .carousel{
+    display:flex; gap:22px; overflow-x:auto; scroll-snap-type:x mandatory; padding:6px 2px 18px;
+    scrollbar-width:none;
+  }
+  .carousel::-webkit-scrollbar{ display:none; }
+  .book-card{
+    scroll-snap-align:start; flex:0 0 250px;
+    background:var(--bg-raise); border:1px solid var(--line); border-radius:var(--radius);
+    padding:22px; transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  }
+  .book-card:hover{ transform:translateY(-6px); border-color:rgba(217,164,65,0.4); box-shadow:0 22px 40px rgba(0,0,0,0.35); }
+  .book-cover{
+    width:100%; aspect-ratio:3/4; border-radius:1px; margin-bottom:18px;
+    background:#151310; display:flex; align-items:center; justify-content:center; overflow:hidden;
+    border:1px solid rgba(217,164,65,0.18);
+  }
+  .book-card h3{ font-size:17px; margin-bottom:6px; line-height:1.3; }
+  .book-price{ color:var(--gold); font-size:14px; margin-bottom:16px; font-weight:600; }
+  .book-card .btn{ width:100%; padding:11px; font-size:12.5px; }
+  .carousel-arrows{ display:flex; justify-content:center; gap:14px; margin-top:8px; }
+  .arrow-btn{
+    width:42px; height:42px; border-radius:50%; border:1px solid rgba(245,241,232,0.25);
+    background:transparent; color:var(--cream); display:flex; align-items:center; justify-content:center;
+    transition:border-color .2s, background .2s;
+  }
+  .arrow-btn:hover{ border-color:var(--gold); background:rgba(217,164,65,0.08); }
+
+  /* ---------- SPLIT VALUE SECTION ---------- */
+  .split{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:center; }
+  @media (max-width:900px){ .split{ grid-template-columns:1fr; gap:44px; } }
+  .split-media{
+    position:relative; aspect-ratio:4/5; border-radius:2px; overflow:hidden;
+    background:linear-gradient(160deg,#1c1912,#0c0b09);
+    border:1px solid var(--line);
+  }
+  .benefit-list{ display:grid; gap:28px; margin-top:30px; }
+  .benefit{ display:flex; gap:18px; }
+  .benefit-icon{
+    flex-shrink:0; width:42px; height:42px; border-radius:50%; border:1px solid rgba(217,164,65,0.4);
+    display:flex; align-items:center; justify-content:center; color:var(--gold);
+  }
+  .benefit h4{ font-family:'Fraunces',serif; font-size:16px; font-weight:600; margin-bottom:4px; }
+  .benefit p{ color:var(--muted); font-size:14.5px; }
+
+  /* ---------- BUNDLE ---------- */
+  .bundle{
+    background:var(--bg-raise); border:1px solid rgba(217,164,65,0.25); border-radius:3px;
+    padding:56px; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;
+    position:relative; overflow:hidden;
+  }
+  .bundle::before{
+    content:''; position:absolute; top:-120px; right:-120px; width:320px; height:320px;
+    background:radial-gradient(circle, rgba(217,164,65,0.16), transparent 70%);
+  }
+  @media (max-width:900px){ .bundle{ grid-template-columns:1fr; padding:36px 24px; } }
+  .bundle h3{ font-size:clamp(26px,3.4vw,34px); margin:8px 0 12px; }
+  .bundle-desc{ color:var(--muted); margin-bottom:26px; max-width:420px; }
+  .checklist{ display:grid; gap:13px; margin-bottom:30px; }
+  .checklist li{ display:flex; gap:12px; align-items:flex-start; font-size:14.5px; list-style:none; }
+  .checklist li svg{ flex-shrink:0; margin-top:2px; color:var(--gold); }
+  .price-row{ display:flex; align-items:baseline; gap:14px; margin-bottom:26px; }
+  .price-old{ color:var(--muted-2); text-decoration:line-through; font-size:18px; }
+  .price-new{ font-family:'Fraunces',serif; font-size:44px; color:var(--gold); font-weight:600; }
+  .bundle-books{ display:flex; justify-content:center; }
+  .fan{ position:relative; width:100%; max-width:340px; height:280px; }
+  .fan .book-cover{ position:absolute; width:130px; height:174px; top:36px; box-shadow:0 20px 40px rgba(0,0,0,0.5); }
+  .fan .b1{ left:6%; transform:rotate(-11deg); z-index:1; }
+  .fan .b2{ left:28%; transform:rotate(-4deg); z-index:2; }
+  .fan .b3{ left:50%; transform:rotate(4deg); z-index:3; }
+  .fan .b4{ left:72%; transform:rotate(11deg); z-index:2; }
+  .offer-icons{ display:flex; gap:22px; margin-top:38px; flex-wrap:wrap; }
+  .offer-icons .oi{ display:flex; align-items:center; gap:9px; font-size:12.5px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; }
+  .offer-icons svg{ color:var(--gold); }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .t-carousel{ display:flex; gap:22px; overflow-x:auto; scroll-snap-type:x mandatory; padding:4px 2px 8px; scrollbar-width:none; }
+  .t-carousel::-webkit-scrollbar{ display:none; }
+  .t-card{
+    scroll-snap-align:start; flex:0 0 min(360px,86vw);
+    background:var(--bg-raise); border:1px solid var(--line); border-radius:2px; padding:30px;
+  }
+  .stars{ color:var(--gold); font-size:14px; letter-spacing:2px; margin-bottom:16px; }
+  .t-card p{ font-size:15px; color:var(--cream); margin-bottom:22px; font-style:italic; line-height:1.65; }
+  .t-person{ display:flex; align-items:center; gap:12px; }
+  .avatar{
+    width:38px; height:38px; border-radius:50%; background:var(--bg-raise-2); border:1px solid rgba(217,164,65,0.35);
+    display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; color:var(--gold); font-size:14px;
+  }
+  .t-person span{ font-size:13.5px; color:var(--muted); }
+
+  /* ---------- EMAIL BAND ---------- */
+  .band{
+    background:var(--band); color:var(--band-ink); padding:64px 0;
+  }
+  .band-inner{ display:grid; grid-template-columns:140px 1fr auto; gap:36px; align-items:center; }
+  @media (max-width:760px){ .band-inner{ grid-template-columns:1fr; text-align:center; } .band-book{ margin:0 auto; } }
+  .band-book{ width:140px; }
+  .band h3{ font-size:26px; margin-bottom:8px; }
+  .band p{ color:rgba(16,15,13,0.68); max-width:420px; }
+  .band-form{ display:flex; gap:10px; flex-wrap:wrap; }
+  @media (max-width:760px){ .band-form{ justify-content:center; } }
+  .band-form input{
+    padding:14px 16px; border:1px solid rgba(16,15,13,0.25); background:rgba(255,255,255,0.5);
+    border-radius:2px; font-family:inherit; font-size:14px; min-width:220px; color:var(--band-ink);
+  }
+  .band-form input::placeholder{ color:rgba(16,15,13,0.5); }
+  .band-form .btn-dark{ padding:14px 22px; }
+
+  /* ---------- FOOTER ---------- */
+  footer{ padding:72px 0 28px; }
+  .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; margin-bottom:56px; }
+  @media (max-width:760px){ .footer-grid{ grid-template-columns:1fr 1fr; } }
+  footer h5{ font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted-2); margin-bottom:18px; }
+  footer ul{ list-style:none; display:grid; gap:11px; }
+  footer ul a{ color:var(--muted); font-size:14px; transition:color .2s; }
+  footer ul a:hover{ color:var(--gold); }
+  .foot-blurb p{ color:var(--muted); font-size:14px; max-width:260px; margin:14px 0 22px; }
+  .socials{ display:flex; gap:14px; }
+  .socials a{
+    width:34px; height:34px; border:1px solid var(--line); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; color:var(--muted);
+  }
+  .socials a:hover{ color:var(--gold); border-color:rgba(217,164,65,0.4); }
+  .foot-news input{
+    width:100%; padding:12px 14px; background:var(--bg-raise); border:1px solid var(--line);
+    color:var(--cream); border-radius:2px; margin-bottom:10px; font-family:inherit; font-size:13.5px;
+  }
+  .foot-news .btn-solid{ width:100%; padding:12px; font-size:13px; }
+  .foot-bottom{
+    border-top:1px solid var(--line); padding-top:24px; display:flex; justify-content:space-between;
+    flex-wrap:wrap; gap:10px; color:var(--muted-2); font-size:12.5px;
+  }
+
+  /* reveal on scroll */
+  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  :focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">
+      <div class="top">MINDSHIFT</div>
+      <div class="sub">Movement</div>
+    </a>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#books">Books</a>
+      <a href="#blog">Blog</a>
+      <a href="#about">About</a>
+      <a href="#resources">Resources</a>
+    </nav>
+    <div class="nav-right">
+      <a href="#bundle" class="btn btn-solid" style="padding:11px 22px;">Shop Now</a>
+      <div class="cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3h2l2.6 13.4a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L22 7H6"/><circle cx="10" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg>
+        <span class="badge">0</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">Everything begins in the mind</p>
+        <h1>Reprogram your mind.<br>Manifest your<br><span class="accent">dream life.</span></h1>
+        <p>Four short books and a guided 21-day practice that shift how you think, so the results in your outer life finally catch up.</p>
+        <div class="hero-ctas">
+          <a href="#books" class="btn btn-solid">Explore Books</a>
+          <a href="#lead" class="btn btn-outline">Free Manifestation Guide</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>45K+</b><span>Followers</span></div>
+          <div class="stat"><b>1M+</b><span>Monthly reads</span></div>
+          <div class="stat"><b>1.4M+</b><span>Likes</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <svg class="orbit-svg" viewBox="0 0 500 500" fill="none">
+          <circle cx="250" cy="250" r="200" stroke="#D9A441" stroke-opacity="0.25" stroke-width="1"/>
+          <circle cx="250" cy="250" r="150" stroke="#D9A441" stroke-opacity="0.18" stroke-width="1" stroke-dasharray="2 6"/>
+          <circle cx="450" cy="250" r="3" fill="#D9A441"/>
+          <circle cx="90" cy="120" r="2" fill="#D9A441" opacity="0.7"/>
+          <circle cx="120" cy="400" r="2" fill="#D9A441" opacity="0.5"/>
+        </svg>
+        <div class="figure-scene">
+          <div class="book-float">
+            <svg viewBox="0 0 300 400" width="100%">
+              <rect x="4" y="4" width="292" height="392" rx="2" fill="#15130F" stroke="#D9A441" stroke-opacity="0.5"/>
+              <rect x="18" y="18" width="264" height="364" rx="1" fill="none" stroke="#D9A441" stroke-opacity="0.3"/>
+              <text x="150" y="72" text-anchor="middle" fill="#A79D8B" font-family="Inter" font-size="10" letter-spacing="3">MINDSHIFT</text>
+              <text x="150" y="86" text-anchor="middle" fill="#7B7264" font-family="Inter" font-size="7" letter-spacing="2">MOVEMENT</text>
+              <circle cx="150" cy="205" r="72" stroke="#D9A441" stroke-width="1" opacity="0.7"/>
+              <path d="M150 150 v-10 M150 270 v-10 M95 205 h-10 M205 205 h10 M112 150 l-7-7 M188 260 l7 7 M112 260 l-7 7 M188 150 l7-7" stroke="#D9A441" stroke-width="1" opacity="0.5"/>
+              <path d="M150 235 c-24 0-34-18-34-32 c0-12 8-20 16-20 c8 0 12 8 12 8 s4-8 12-8 c8 0 16 8 16 20 c0 14-10 32-22 32z" fill="none" stroke="#D9A441" stroke-width="1.4"/>
+              <circle cx="150" cy="175" r="10" fill="none" stroke="#D9A441" stroke-width="1.4"/>
+              <text x="150" y="320" text-anchor="middle" fill="#F5F1E8" font-family="Fraunces" font-size="17" font-weight="600">THE POWER</text>
+              <text x="150" y="338" text-anchor="middle" fill="#F5F1E8" font-family="Fraunces" font-size="17" font-weight="600">IS WITHIN YOU</text>
+              <text x="150" y="366" text-anchor="middle" fill="#7B7264" font-family="Inter" font-size="8" letter-spacing="1.5">MASTER YOUR MIND · MANIFEST YOUR LIFE</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT CAROUSEL -->
+  <section id="books">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker center">Our Books</p>
+        <h2>Books that change lives</h2>
+      </div>
+      <div class="carousel-wrap reveal">
+        <div class="carousel" id="bookCarousel"></div>
+        <div class="carousel-arrows">
+          <button class="arrow-btn" id="carLeft" aria-label="Previous book">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="arrow-btn" id="carRight" aria-label="Next book">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE PROP SPLIT -->
+  <section>
+    <div class="wrap split">
+      <div class="split-media reveal">
+        <svg width="100%" height="100%" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+          <rect width="400" height="500" fill="#151310"/>
+          <rect x="40" y="150" width="180" height="14" rx="1" fill="#0c0b09" transform="rotate(-3 40 150)"/>
+          <rect x="45" y="160" width="170" height="120" fill="#1d1a13" transform="rotate(-3 45 160)"/>
+          <line x1="60" y1="180" x2="200" y2="176" stroke="#D9A441" stroke-opacity="0.5" stroke-width="1"/>
+          <line x1="60" y1="196" x2="190" y2="192" stroke="#5c564a" stroke-width="1"/>
+          <line x1="60" y1="212" x2="195" y2="208" stroke="#5c564a" stroke-width="1"/>
+          <line x1="60" y1="228" x2="180" y2="224" stroke="#5c564a" stroke-width="1"/>
+          <circle cx="300" cy="230" r="26" fill="#241f14" stroke="#D9A441" stroke-opacity="0.6"/>
+          <path d="M300 220 q0 20 0 20" stroke="#D9A441" stroke-width="1.4"/>
+          <ellipse cx="300" cy="256" rx="4" ry="9" fill="#D9A441" opacity="0.8"/>
+          <rect x="230" y="330" width="150" height="110" rx="2" fill="#1a170f" stroke="#D9A441" stroke-opacity="0.35"/>
+          <text x="305" y="378" text-anchor="middle" fill="#D9A441" font-family="Fraunces" font-size="12">YOUR THOUGHTS</text>
+          <text x="305" y="396" text-anchor="middle" fill="#D9A441" font-family="Fraunces" font-size="12">CREATE YOUR</text>
+          <text x="305" y="414" text-anchor="middle" fill="#D9A441" font-family="Fraunces" font-size="12">REALITY</text>
+        </svg>
+      </div>
+      <div class="reveal">
+        <p class="kicker">Why choose MindShift Movement</p>
+        <h2 style="font-size:clamp(26px,3.6vw,38px); line-height:1.15;">More than just books.<br>It's a transformation.</h2>
+        <div class="benefit-list">
+          <div class="benefit">
+            <div class="benefit-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg></div>
+            <div><h4>Proven methods</h4><p>Grounded in techniques people have used for decades — not trends, not hype.</p></div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+            <div><h4>Practical and easy to follow</h4><p>Short chapters, clear exercises, and a daily plan you can actually stick to.</p></div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+            <div><h4>Instant digital download</h4><p>Start reading in the next two minutes. No shipping, no waiting.</p></div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+            <div><h4>Lifetime access</h4><p>Download once, keep it forever — including every future update.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUNDLE -->
+  <section id="bundle">
+    <div class="wrap">
+      <div class="bundle reveal">
+        <div>
+          <p class="kicker">Best value</p>
+          <h3>The Complete MindShift Collection</h3>
+          <p class="bundle-desc">All four books, the full 21-day practice, and every bonus — one purchase, nothing else to buy.</p>
+          <ul class="checklist">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 4 complete eBooks (PDF + EPUB)</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Guided 21-day manifestation challenge</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Printable manifestation journal</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Audio affirmations and visualisations</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Lifetime access, including future updates</li>
+          </ul>
+          <div class="price-row">
+            <span class="price-new">$24.99</span>
+            <span class="price-old">$61.96</span>
+          </div>
+          <a href="#lead" class="btn btn-solid">Get the Collection</a>
+          <div class="offer-icons">
+            <div class="oi"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="1"/></svg>4 eBooks</div>
+            <div class="oi"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 12l-8-8-8 8 8 8z"/></svg>Bonuses</div>
+            <div class="oi"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/></svg>Lifetime access</div>
+          </div>
+        </div>
+        <div class="bundle-books">
+          <div class="fan" id="bundleFan"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker center">What readers say</p>
+        <h2>Real people. Real results.</h2>
+      </div>
+      <div class="carousel-wrap reveal">
+        <div class="t-carousel" id="tCarousel"></div>
+        <div class="carousel-arrows">
+          <button class="arrow-btn" id="tLeft" aria-label="Previous testimonial">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="arrow-btn" id="tRight" aria-label="Next testimonial">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMAIL BAND -->
+  <section class="band" id="lead" style="padding:0;">
+    <div class="wrap band-inner">
+      <div class="band-book">
+        <svg viewBox="0 0 140 190" width="100%">
+          <rect x="2" y="2" width="136" height="186" rx="2" fill="#15130F"/>
+          <circle cx="70" cy="90" r="30" fill="none" stroke="#D9A441" stroke-width="1.2"/>
+          <text x="70" y="150" text-anchor="middle" fill="#F5F1E8" font-family="Fraunces" font-size="10">THE POWER</text>
+          <text x="70" y="163" text-anchor="middle" fill="#F5F1E8" font-family="Fraunces" font-size="10">IS WITHIN YOU</text>
+        </svg>
+      </div>
+      <div>
+        <p class="kicker" style="color:#8a6a20;">Free gift</p>
+        <h3>Get your free manifestation guide</h3>
+        <p>Join thousands of like-minded readers and start your transformation today — no cost, no catch.</p>
+      </div>
+      <form class="band-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Sent — check your inbox';">
+        <input type="email" required placeholder="Enter your email address" aria-label="Email address">
+        <button class="btn btn-dark" type="submit">Send My Free Guide</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="foot-blurb">
+        <a href="#" class="logo"><div class="top">MINDSHIFT</div><div class="sub">Movement</div></a>
+        <p>Everything begins in the mind. Books and tools for people ready to change how they think.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 4v9.5a3.5 3.5 0 1 1-2.5-3.35V6.5a5 5 0 0 0 5 3.5"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M11 10l4 2-4 2z"/></svg></a>
+          <a href="#" aria-label="Pinterest"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 17l2-9m1 4a2 2 0 1 0 3-2.5"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul><li><a href="#home">Home</a></li><li><a href="#books">Books</a></li><li><a href="#blog">Blog</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul>
+      </div>
+      <div>
+        <h5>Resources</h5>
+        <ul><li><a href="#">Manifestation guide</a></li><li><a href="#">Affirmations</a></li><li><a href="#">Visualization</a></li><li><a href="#">Mindset tools</a></li><li><a href="#">FAQ</a></li></ul>
+      </div>
+      <div>
+        <h5>Stay Connected</h5>
+        <div class="foot-news">
+          <input type="email" placeholder="Enter your email">
+          <button class="btn btn-solid">Get updates</button>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 MindShift Movement. All rights reserved.</span>
+      <span>Terms of Use · Privacy Policy · Refund Policy</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ---- data ----
+const books = [
+  { title:"The Art of Manifestation", price:"$12.99", motif:"lotus" },
+  { title:"Reprogram Your Subconscious Mind", price:"$12.99", motif:"brain" },
+  { title:"The Laws of the Universe", price:"$12.99", motif:"galaxy" },
+  { title:"Manifest Your Dream Life", price:"$12.99", motif:"summit" },
+];
+
+const testimonials = [
+  { quote:"I started the 21-day challenge expecting nothing and finished it journaling every morning without being told to. Something actually shifted.", name:"Sarah J." },
+  { quote:"The subconscious mind book explained why I kept sabotaging good opportunities. First self-help book that made me feel understood, not lectured.", name:"Michael T." },
+  { quote:"Bought the full collection on a whim during a rough month. Three weeks later I finally sent the portfolio I'd been sitting on for a year.", name:"Emily R." },
+];
+
+function motifSVG(motif){
+  const common = 'viewBox="0 0 200 260" width="100%" height="100%"';
+  if(motif==="lotus") return `<svg ${common}>
+    <rect width="200" height="260" fill="#15130F"/>
+    <circle cx="100" cy="120" r="46" fill="none" stroke="#D9A441" stroke-width="1"/>
+    <path d="M100 148c-16 0-23-12-23-21 c0-8 5-13 11-13 c5 0 8 5 8 5 s3-5 8-5 c6 0 11 5 11 13 c0 9-7 21-15 21z" fill="none" stroke="#D9A441" stroke-width="1.3"/>
+    <circle cx="100" cy="97" r="7" fill="none" stroke="#D9A441" stroke-width="1.3"/>
+    <text x="100" y="60" text-anchor="middle" fill="#7B7264" font-family="Inter" font-size="7" letter-spacing="2">THE ART OF</text>
+    <text x="100" y="200" text-anchor="middle" fill="#F5F1E8" font-family="Fraunces" font-size="14">MANIFESTATION</text>
+  </svg>`;
+  if(motif==="brain") return `<svg ${common}>
+    <rect width="200" height="260" fill="#0e0d0b"/>
+    <path d="M100 70c-24 0-38 18-38 38c0 10 4 16 4 16s-8 4-8 16c0 14 12 20 12 20s-2 10 8 16c8 5 20 4 22-2" fill="none" stroke="#D9A441" stroke-width="1.2"/>
+    <path d="M100 70c8 0 14 4 18 10" fill="none" stroke="#D9A441" stroke-width="1"/>
+    <circle cx="70" cy="100" r="2" fill="#D9A441"/>
+    <circle cx="120" cy="90" r="2" fill="#D9A441"/>
+    <circle cx="66" cy="130" r="2" fill="#D9A441"/>
+    <path d="M70 100 L120 90 M120 90 L66 130" stroke="#D9A441" stroke-width="0.6" opacity="0.6"/>
+    <text x="100" y="200" text-anchor="middle" fill="#F5F1E8" font-family="Fraunces" font-size="12">REPROGRAM YOUR</text>
+    <text x="100" y="216" text-anchor="middle" fill="#F5F1E8" font-family="Fraunces" font-size="12">SUBCONSCIOUS MIND</text>
+  </svg>`;
+  if(motif==="galaxy") return `<svg ${common}>
+    <rect width="200" height="260" fill="#0a0a10"/>
+    <path d="M100 130 q30 -30 0 -60 q-30 30 0 60 q-30 30 0 60 q30 -30 0 -60" fill="none" stroke="#D9A441" stroke-width="1"/>
+    <circle cx="100" cy="130" r="4" fill="#D9A441"/>
+    <circle cx="60" cy="80" r="1.4" fill="#F5F1E8"/>
+    <circle cx="145" cy="70" r="1.4" fill="#F5F1E8"/>
+    <circle cx="150" cy="170" r="1.4" fill="#F5F1E8"/>
+    <circle cx="55" cy="180" r="1.4" fill="#F5F1E8"/>
+    <text x="100" y="200" text-anchor="middle" fill="#F5F1E8" font-family="Fraunces" font-size="14">THE LAWS OF</text>
+    <text x="100" y="216" text-anchor="middle" fill="#F5F1E8" font-family="Fraunces" font-size="14">THE UNIVERSE</text>
+  </svg>`;
+  return `<svg ${common}>
+    <rect width="200" height="260" fill="#12100c"/>
+    <path d="M40 190 L85 110 L110 145 L130 110 L165 190 Z" fill="none" stroke="#D9A441" stroke-width="1.2"/>
+    <circle cx="110" cy="95" r="16" fill="none" stroke="#D9A441" stroke-width="1"/>
+    <circle cx="108" cy="152" r="3" fill="#D9A441"/>
+    <text x="100" y="215" text-anchor="middle" fill="#F5F1E8" font-family="Fraunces" font-size="13">MANIFEST YOUR</text>
+    <text x="100" y="231" text-anchor="middle" fill="#F5F1E8" font-family="Fraunces" font-size="13">DREAM LIFE</text>
+  </svg>`;
+}
+
+const bookCarousel = document.getElementById('bookCarousel');
+books.forEach(b=>{
+  const card = document.createElement('div');
+  card.className='book-card';
+  card.innerHTML = `
+    <div class="book-cover">${motifSVG(b.motif)}</div>
+    <h3>${b.title}</h3>
+    <div class="book-price">${b.price}</div>
+    <button class="btn btn-outline">View Details</button>`;
+  bookCarousel.appendChild(card);
+});
+
+const fan = document.getElementById('bundleFan');
+books.forEach((b,i)=>{
+  const el = document.createElement('div');
+  el.className = `book-cover b${i+1}`;
+  el.innerHTML = motifSVG(b.motif);
+  fan.appendChild(el);
+});
+
+const tCarousel = document.getElementById('tCarousel');
+testimonials.forEach(t=>{
+  const card = document.createElement('div');
+  card.className='t-card';
+  card.innerHTML = `
+    <div class="stars">★★★★★</div>
+    <p>"${t.quote}"</p>
+    <div class="t-person">
+      <div class="avatar">${t.name.charAt(0)}</div>
+      <span>— ${t.name}</span>
+    </div>`;
+  tCarousel.appendChild(card);
+});
+
+function wireCarousel(elId, leftId, rightId, amount){
+  const el = document.getElementById(elId);
+  document.getElementById(leftId).addEventListener('click', ()=> el.scrollBy({left:-amount, behavior:'smooth'}));
+  document.getElementById(rightId).addEventListener('click', ()=> el.scrollBy({left:amount, behavior:'smooth'}));
+}
+wireCarousel('bookCarousel','carLeft','carRight',280);
+wireCarousel('tCarousel','tLeft','tRight',380);
+
+// reveal on scroll
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:0.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
